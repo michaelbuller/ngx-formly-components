@@ -1,2 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+.display-flex { display: flex; }
+
+.flex-1 { 
+    flex: 1;
+    padding-left: 10px;
+    padding-right: 10px; }
+
+.flex-2 { 
+    flex: 2;
+    padding-left: 10px;
+    padding-right: 10px; }
+
+.flex-3 { flex: 3;
+    padding-left: 10px;
+    padding-right: 10px; }
+
+.flex-4 { flex: 4; 
+    padding-left: 10px;
+    padding-right: 10px;}
+
+.flex-5 { flex: 5; 
+    padding-left: 10px;
+    padding-right: 10px;}
+
+.flex-6 { flex: 6; 
+    padding-left: 10px;
+    padding-right: 10px;}
+
+[class*='flex-'] {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+[class*='flex-']:first-child {
+  padding-left: 0;
+}
+
+[class*='flex-']:nth-last-child(2) {
+  padding-right: 0;
+}

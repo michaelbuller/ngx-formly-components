@@ -19,13 +19,13 @@ import { FormlyAddressPickerMapComponent } from './map/map.component';
   `],
     template: `
     <div [ngStyle]="{color:formControl.errors?'#f44336':'inherit'}">
-        <md-input-container style="width: 100%">
-            <input mdInput [placeholder]="to.placeholder" type="text" [(ngModel)]="value" (ngModelChange)="changed($event)" [disabled]="formControl.disabled" [mdAutocomplete]="autocomplete"/>
-            <i *ngIf="to.map !== false" mdSuffix class="material-icons md-18 open-map" [class.disabled]="formControl.disabled" (click)="openMap()" [mdTooltip]="to.tooltip" mdTooltipPosition="below">my_location</i>
-        </md-input-container>
-        <md-autocomplete #autocomplete="mdAutocomplete" (optionSelected)="clicked($event.option.value)" [displayWith]="displayAutocomplete.bind(this)">
-            <md-option *ngFor="let item of items" [value]="item" [title]="optionDisplayFn(item)">{{optionDisplayFn(item)}}</md-option>
-        </md-autocomplete>
+        <mat-input-container style="width: 100%">
+            <input matInput [placeholder]="to.placeholder" type="text" [(ngModel)]="value" (ngModelChange)="changed($event)" [disabled]="formControl.disabled" [matAutocomplete]="autocomplete"/>
+            <i *ngIf="to.map !== false" mdSuffix class="material-icons mat-18 open-map" [class.disabled]="formControl.disabled" (click)="openMap()" [matTooltip]="to.tooltip" matTooltipPosition="below">my_location</i>
+        </mat-input-container>
+        <mat-autocomplete #autocomplete="matAutocomplete" (optionSelected)="clicked($event.option.value)" [displayWith]="displayAutocomplete.bind(this)">
+            <mat-option *ngFor="let item of items" [value]="item" [title]="optionDisplayFn(item)">{{optionDisplayFn(item)}}</mat-option>
+        </mat-autocomplete>
     </div>
   `,
 })

@@ -1,28 +1,29 @@
 import { Component, OnInit, DoCheck, ChangeDetectorRef, OnDestroy, Inject, AfterViewInit } from '@angular/core';
 import { FieldType } from '@ngx-formly/core';
-import { Subject } from 'rxjs/Subject';
 import { FormControl } from '@angular/forms';
 import { Http } from "@angular/http";
-import { Subscription } from 'rxjs/Subscription';
+import { Subject } from 'rxjs/Subject';
+import { Subscription } from "rxjs/Subscription";
+import { takeUntil } from 'rxjs/operators';
 import { MAT_DIALOG_DATA } from "@angular/material";
-//import * as L from 'leaflet';
-declare var L;
+import * as L from 'leaflet';
+//declare var L;
 @Component({
 	selector: 'formly-ngx-address-picker-map',
 	styles: [`
   `],
 	template: `
 	<div style="width: 100%; height: 100%; position: relative">
-		<md-input-container style="width: 100%">
-			<input mdInput [placeholder]="data.placeholder" type="text" [(ngModel)]="value" (ngModelChange)="changed($event)" [mdAutocomplete]="autocomplete"/>
-		</md-input-container>
-		<md-autocomplete #autocomplete="mdAutocomplete" (optionSelected)="clicked($event.option.value)" [displayWith]="displayAutocomplete">
-			<md-option *ngFor="let item of items" [value]="item">{{displayFn(item)}}</md-option>
-		</md-autocomplete>
+		<mat-input-container style="width: 100%">
+			<input matInput [placeholder]="data.placeholder" type="text" [(ngModel)]="value" (ngModelChange)="changed($event)" [matAutocomplete]="autocomplete"/>
+		</mat-input-container>
+		<mat-autocomplete #autocomplete="matAutocomplete" (optionSelected)="clicked($event.option.value)" [displayWith]="displayAutocomplete">
+			<mat-option *ngFor="let item of items" [value]="item">{{displayFn(item)}}</mat-option>
+		</mat-autocomplete>
 		<div id="ngx-formly-components-map-{{mapId}}" style="height: calc(100% - 100px); width: 100%; position: relative"></div>
 		<div style="margin-top: 15px">
-			<button md-raised-button color="primary" [md-dialog-close]="{value: result, response: response}"><i class="material-icons">done</i> {{data.yes}}</button>
-			<button md-button color="primary" [md-dialog-close]="false"><i class="material-icons">cancel</i> {{data.no}}</button>		
+			<button md-raised-button color="primary" [mat-dialog-close]="{value: result, response: response}"><i class="material-icons">done</i> {{data.yes}}</button>
+			<button md-button color="primary" [mat-dialog-close]="false"><i class="material-icons">cancel</i> {{data.no}}</button>		
 		</div>
 	</div>
   `,

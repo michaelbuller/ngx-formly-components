@@ -2,6 +2,8 @@ import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
 import { FieldType } from '@ngx-formly/core';
 import { Validators, FormControl } from '@angular/forms';
 import { Subject } from 'rxjs/Subject';
+import { Subscription } from "rxjs/Subscription";
+import { takeUntil } from 'rxjs/operators';
 import * as moment from 'moment';
 
 @Component({
@@ -16,10 +18,22 @@ import * as moment from 'moment';
     `],
     template: `
     <div class="" [ngStyle]="{color:formControl.errors?'#f44336':'inherit'}">
-        <md-input-container>
-            <input mdInput [formControl]="formControl" [placeholder]="to.placeholder" type="text" [textMask]="{mask: to.mask, keepCharPositions: true, pipe: autoCorrectedDatePipe }"/>
-            <i mdSuffix class="fa fa-calendar-check-o today" [class.disabled]="formControl.disabled" [mdTooltip]="to.tooltip || 'Today'" mdTooltipPosition="below" (click)="!to.disabled && today()"></i>
-        </md-input-container>
+         <mat-form-field>
+        <input 
+            matInput 
+            [matDatepicker]="picker" 
+            [placeholder]="to.placeholder"
+            [textMask]="{mask: to.mask, keepCharPositions: true, pipe: autoCorrectedDatePipe }">
+        <mat-datepicker-toggle 
+            matSuffix 
+            [for]="picker" 
+            [class.disabled]="formControl.disabled" 
+            [matTooltip]="to.tooltip || 'Today'" 
+            matTooltipPosition="below" 
+            ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        
     </div>
     `
 })

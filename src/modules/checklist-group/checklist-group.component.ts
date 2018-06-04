@@ -2,6 +2,8 @@ import { Component, OnInit, DoCheck, OnDestroy, ViewEncapsulation } from '@angul
 import { FieldType } from '@ngx-formly/core';
 import { Validators, FormControl } from '@angular/forms';
 import { Subject } from 'rxjs/Subject';
+import { Subscription } from "rxjs/Subscription";
+import { takeUntil } from 'rxjs/operators';
 import { MatCheckboxChange } from "@angular/material";
 
 @Component({
@@ -20,7 +22,7 @@ import { MatCheckboxChange } from "@angular/material";
     `],
     template: `
     <div *ngFor="let item of items" [ngClass]="{'chk-item-float': to.float, 'chk-item': !to.float }">
-        <md-checkbox [disabled]="to.disabled || item.disabled === true" [ngModel]="checked[item.value]" (change)="toggle($event, item)">{{item.name}}</md-checkbox>
+        <mat-checkbox [disabled]="to.disabled || item.disabled === true" [ngModel]="checked[item.value]" (change)="toggle($event, item)">{{item.name}}</mat-checkbox>
     </div>
     `,
     encapsulation: ViewEncapsulation.Emulated

@@ -11,9 +11,19 @@ import { Subject } from 'rxjs/Subject';
   `],
     template: `
     <div class="" [ngStyle]="{color:formControl.errors?'#f44336':'inherit'}">
-        <md-input-container style="width: 100%">
-            <textarea [mdAutosizeMaxRows]="to.maxRows" [mdAutosizeMinRows]="to.minRows" mdInput mdTextareaAutosize placeholder="{{to.placeholder}}" [formControl]="formControl" (keydown)="keydown($event)" (keyup)="keyup($event)"></textarea>
-        </md-input-container>
+        <mat-form-field style="width: 100%">
+            <textarea 
+                [matAutosizeMaxRows]="to.maxRows" 
+                [matAutosizeMinRows]="to.minRows" 
+                matInput 
+                matTextareaAutosize 
+                matAutosize
+                placeholder="{{to.placeholder}}" 
+                [formControl]="formControl" 
+                (keydown)="keydown($event)" 
+                (keyup)="keyup($event)">
+            </textarea>
+        </mat-form-field>
     </div>
   `,
 })

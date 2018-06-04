@@ -4,15 +4,15 @@ import { FieldWrapper } from '@ngx-formly/core';
 @Component({
   selector: 'formly-card-wrapper',
   template: `
-    <md-card>
-      <md-card-header>
-        <md-card-title *ngIf="to.title">{{to.title}}</md-card-title>
-        <md-card-subtitle *ngIf="to.subtitle">{{to.subtitle}}</md-card-subtitle>
-      </md-card-header>
-      <md-card-content class="row">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title *ngIf="to.title">{{to.title}}</mat-card-title>
+        <mat-card-subtitle *ngIf="to.subtitle">{{to.subtitle}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content class="row">
         <ng-container #fieldComponent></ng-container>
-      </md-card-content>
-    </md-card>
+      </mat-card-content>
+    </mat-card>
   `,
   styles: [`
     :host {

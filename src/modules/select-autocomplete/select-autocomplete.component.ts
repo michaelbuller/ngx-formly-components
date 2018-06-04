@@ -4,6 +4,7 @@ import { Subject } from 'rxjs/Subject';
 import { FormControl } from '@angular/forms';
 import { Http } from "@angular/http";
 import { Subscription } from 'rxjs/Subscription';
+import 'rxjs/add/operator/takeUntil';
 import { MatDialog, MatAutocomplete } from '@angular/material';
 
 @Component({
@@ -15,14 +16,14 @@ import { MatDialog, MatAutocomplete } from '@angular/material';
   `],
     template: `
     <div [ngStyle]="{color:formControl.errors?'#f44336':'inherit'}">
-        <md-form-field style="width: 100%">
-            <input mdInput [placeholder]="to.placeholder" type="text" [(ngModel)]="value" (ngModelChange)="changed($event)" [disabled]="formControl.disabled" [mdAutocomplete]="autocomplete"/>
-            <md-autocomplete #autocomplete="mdAutocomplete" [displayWith]="displayFn.bind(this)" (optionSelected)="selected($event)">
-                <md-option *ngFor="let item of filteredItems" [value]="item" [mdTooltip]="to.tooltip && this.displayFn(item)" [mdTooltipPosition]="to.tooltip">
+        <mat-form-field style="width: 100%">
+            <input matInput [placeholder]="to.placeholder" type="text" [(ngModel)]="value" (ngModelChange)="changed($event)" [disabled]="formControl.disabled" [matAutocomplete]="autocomplete"/>
+            <mat-autocomplete #autocomplete="matAutocomplete" [displayWith]="displayFn.bind(this)" (optionSelected)="selected($event)">
+                <mat-option *ngFor="let item of filteredItems" [value]="item" [matTooltip]="to.tooltip && this.displayFn(item)" [matTooltipPosition]="to.tooltip">
                 {{displayFn(item)}} <small *ngIf="to.displayExtraFn != null" class="autocomplete-info">{{displayExtraFn(item)}}</small>
-                </md-option>
-            </md-autocomplete>
-        </md-form-field>        
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>        
     </div>
   `,
 })

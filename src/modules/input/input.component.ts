@@ -1,7 +1,9 @@
 import { Component, OnInit, DoCheck, ChangeDetectorRef, OnDestroy, AfterViewInit, ViewChild, Input, ElementRef } from '@angular/core';
 import { FieldType } from '@ngx-formly/core';
 import { Subject } from 'rxjs/Subject';
+import 'rxjs/add/operator/takeUntil';
 import { FormControl } from '@angular/forms';
+
 
 @Component({
     selector: 'ngx-formly-component-input',
@@ -13,12 +15,12 @@ import { FormControl } from '@angular/forms';
   `],
     template: `
     <div class="" [ngStyle]="{color:formControl.errors?'#f44336':'inherit'}">
-        <md-input-container style="width: 100%">
-            <input #myinput mdInput [placeholder]="to.placeholder" [maxlength]="to.maxLength" type="{{to.password?'password':'text'}}" [formControl]="formControl" [mdAutocomplete]="autocomplete" [value]="value" (keydown)="keydown($event)"/>
-        </md-input-container>
-        <md-autocomplete #autocomplete="mdAutocomplete">
-            <md-option *ngFor="let item of filteredItems" [value]="item">{{item}}</md-option>
-        </md-autocomplete>
+        <mat-input-container style="width: 100%">
+            <input #myinput matInput [placeholder]="to.placeholder" [maxlength]="to.maxLength" type="{{to.password?'password':'text'}}" [formControl]="formControl" [matAutocomplete]="autocomplete" [value]="value" (keydown)="keydown($event)"/>
+        </mat-input-container>
+        <mat-autocomplete #autocomplete="matAutocomplete">
+            <mat-option *ngFor="let item of filteredItems" [value]="item">{{item}}</mat-option>
+        </mat-autocomplete>
   </div>
   `,
 })

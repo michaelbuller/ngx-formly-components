@@ -2,6 +2,8 @@ import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
 import { FieldType } from '@ngx-formly/core';
 import { Validators, FormControl } from '@angular/forms';
 import { Subject } from 'rxjs/Subject';
+import { Subscription } from "rxjs/Subscription";
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
     selector: 'ngx-formly-component-checklist',
@@ -11,7 +13,7 @@ import { Subject } from 'rxjs/Subject';
     }
     `],
     template: `
-    <md-checkbox [disabled]="formControl.disabled" [(ngModel)]="value" (ngModelChange)="changed($event)">{{to.text || ''}}</md-checkbox>
+    <mat-checkbox [disabled]="formControl.disabled" [(ngModel)]="value" (ngModelChange)="changed($event)">{{to.text || ''}}</mat-checkbox>
     `
 })
 export class FormlyChecklistComponent extends FieldType implements OnInit, OnDestroy {

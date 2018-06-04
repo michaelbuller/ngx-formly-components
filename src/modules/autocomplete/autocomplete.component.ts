@@ -3,7 +3,8 @@ import { FieldType } from '@ngx-formly/core';
 import { Subject } from 'rxjs/Subject';
 import { FormControl } from '@angular/forms';
 import { Http } from "@angular/http";
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from "rxjs/Subscription";
+import { takeUntil } from 'rxjs/operators';
 import { MatDialog, MatAutocomplete } from '@angular/material';
 
 @Component({
@@ -12,12 +13,12 @@ import { MatDialog, MatAutocomplete } from '@angular/material';
   `],
     template: `
     <div [ngStyle]="{color:formControl.errors?'#f44336':'inherit'}">
-        <md-input-container style="width: 100%">
-            <input mdInput [placeholder]="to.placeholder" type="text" [(ngModel)]="value" (ngModelChange)="changed($event)" [disabled]="formControl.disabled" [mdAutocomplete]="autocomplete"/>
-        </md-input-container>
-        <md-autocomplete #autocomplete="mdAutocomplete" [displayWith]="displayFn">
-            <md-option *ngFor="let item of items" [value]="item" (click)="clicked(item)" [mdTooltip]="to.tooltip && item.name" [mdTooltipPosition]="to.tooltip">{{item.name}}</md-option>
-        </md-autocomplete>
+        <mat-input-container style="width: 100%">
+            <input matInput [placeholder]="to.placeholder" type="text" [(ngModel)]="value" (ngModelChange)="changed($event)" [disabled]="formControl.disabled" [matAutocomplete]="autocomplete"/>
+        </mat-input-container>
+        <mat-autocomplete #autocomplete="matAutocomplete" [displayWith]="displayFn">
+            <mat-option *ngFor="let item of items" [value]="item" (click)="clicked(item)" [matTooltip]="to.tooltip && item.name" [matTooltipPosition]="to.tooltip">{{item.name}}</mat-option>
+        </mat-autocomplete>
     </div>
   `,
 })

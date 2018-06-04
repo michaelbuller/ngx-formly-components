@@ -2,7 +2,8 @@ import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
 import { FieldType } from '@ngx-formly/core';
 import { Validators, FormControl } from '@angular/forms';
 import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs';
+import { Subscription } from "rxjs/Subscription";
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
     selector: 'ngx-formly-component-chips',
@@ -14,19 +15,19 @@ import { Observable } from 'rxjs';
     `],
     template: `
     <div class="" [ngStyle]="{color:formControl.errors?'#f44336':'inherit'}">
-        <md-form-field>
-            <input type="text" [disabled]="formControl.disabled" mdInput [placeholder]="to.placeholder" [(ngModel)]="value" (ngModelChange)="changed($event)" [mdAutocomplete]="autocomplete" (keyup.enter)="add()">
-            <md-autocomplete #autocomplete="mdAutocomplete" [displayWith]="displayFn">
-                <md-option *ngFor="let option of filteredItems" [value]="option" (click)="add(option)">
+        <mat-form-field>
+            <input type="text" [disabled]="formControl.disabled" matInput [placeholder]="to.placeholder" [(ngModel)]="value" (ngModelChange)="changed($event)" [matAutocomplete]="autocomplete" (keyup.enter)="add()">
+            <mat-autocomplete #autocomplete="matAutocomplete" [displayWith]="displayFn">
+                <mat-option *ngFor="let option of filteredItems" [value]="option" (click)="add(option)">
                     {{ option.name }}
-                </md-option>
-            </md-autocomplete>    
-        </md-form-field> 
-        <md-chip-list [tabIndex]="-1">
-            <md-chip *ngFor="let item of selectedItems" (click)="remove(item)" style="cursor: pointer">
+                </mat-option>
+            </mat-autocomplete>    
+        </mat-form-field> 
+        <mat-chip-list [tabIndex]="-1">
+            <mat-chip *ngFor="let item of selectedItems" (click)="remove(item)" style="cursor: pointer">
                 {{chipDisplayFn(item)}}
-            </md-chip>
-        </md-chip-list>
+            </mat-chip>
+        </mat-chip-list>
     </div>
     `
 })

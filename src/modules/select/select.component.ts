@@ -3,6 +3,7 @@ import { FieldType } from '@ngx-formly/core';
 import { Validators, FormControl } from '@angular/forms';
 import { Subject } from 'rxjs/Subject';
 import { Subscription } from "rxjs/Subscription";
+import 'rxjs/add/operator/takeUntil';
 
 @Component({
     selector: 'ngx-formly-component-select',
@@ -13,10 +14,10 @@ import { Subscription } from "rxjs/Subscription";
     `],
     template: `
     <div class="" [ngStyle]="{color:formControl.errors?'#f44336':'inherit'}" style="margin-top: 10px">
-        <md-select [(ngModel)]="value" (ngModelChange)="changed($event)" [disabled]="formControl.disabled" [style.width]="to.nullable?'calc(100% - 50px)':'100%'" style="padding-top: 4px" [placeholder]="to.placeholder" [multiple]="to.multiple">
-            <md-option *ngFor="let item of items" [value]="item">{{displayFn(item)}}</md-option>
-        </md-select>
-        <button md-icon-button *ngIf="to.nullable" (click)="clear()"><i class="material-icons md-24">clear</i></button>
+        <mat-select [(ngModel)]="value" (ngModelChange)="changed($event)" [disabled]="formControl.disabled" [style.width]="to.nullable?'calc(100% - 50px)':'100%'" style="padding-top: 4px" [placeholder]="to.placeholder" [multiple]="to.multiple">
+            <mat-option *ngFor="let item of items" [value]="item">{{displayFn(item)}}</mat-option>
+        </mat-select>
+        <button mat-icon-button *ngIf="to.nullable" (click)="clear()"><i class="material-icons mat-24">clear</i></button>
     </div>
     `
 })

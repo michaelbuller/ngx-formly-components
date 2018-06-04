@@ -5,6 +5,7 @@ import { FormControl } from '@angular/forms';
 import { Http } from "@angular/http";
 import { Subscription } from 'rxjs/Subscription';
 import { MatDialog, MatAutocomplete } from '@angular/material';
+import 'rxjs/add/operator/takeUntil';
 
 @Component({
     selector: 'formly-ngx-radio-group',
@@ -25,11 +26,11 @@ import { MatDialog, MatAutocomplete } from '@angular/material';
   `],
     template: `
     <div class="formly-radio-group-label">{{to.label}}</div>
-    <md-radio-group class="formly-radio-group" [(ngModel)]="value">
-        <md-radio-button class="formly-radio-button" *ngFor="let item of items" [value]="item.value" (click)="changed(item)">
+    <mat-radio-group class="formly-radio-group" [(ngModel)]="value">
+        <mat-radio-button class="formly-radio-button" *ngFor="let item of items" [value]="item.value" (click)="changed(item)">
             {{item.name}}
-        </md-radio-button>
-    </md-radio-group>
+        </mat-radio-button>
+    </mat-radio-group>
   `,
 })
 export class FormlyRadioGroupComponent extends FieldType implements OnInit, OnDestroy {
