@@ -1,5 +1,5 @@
 import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
-import { Field } from 'ng-formly';
+import { FieldType } from '@ngx-formly/core';
 import { Validators, FormControl } from '@angular/forms';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs';
@@ -30,7 +30,7 @@ import { Observable } from 'rxjs';
     </div>
     `
 })
-export class FormlyChipsComponent extends Field implements OnInit, OnDestroy {
+export class FormlyChipsComponent extends FieldType implements OnInit, OnDestroy {
 
     private ngUnsubscribe: Subject<void> = new Subject<void>();
     public items: any[];

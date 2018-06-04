@@ -1,10 +1,10 @@
 import { Component, OnInit, DoCheck, ChangeDetectorRef, OnDestroy, ViewChild } from '@angular/core';
-import { Field } from 'ng-formly';
+import { FieldType } from '@ngx-formly/core';
 import { Subject } from 'rxjs/Subject';
 import { FormControl } from '@angular/forms';
 import { Http } from "@angular/http";
 import { Subscription } from 'rxjs/Subscription';
-import { MdDialog, MdAutocomplete } from '@angular/material';
+import { MatDialog, MatAutocomplete } from '@angular/material';
 import { FormlyAddressPickerMapComponent } from './map/map.component';
 
 @Component({
@@ -29,7 +29,7 @@ import { FormlyAddressPickerMapComponent } from './map/map.component';
     </div>
   `,
 })
-export class FormlyAddressPickerComponent extends Field implements OnInit, OnDestroy {
+export class FormlyAddressPickerComponent extends FieldType implements OnInit, OnDestroy {
 
     private ngUnsubscribe: Subject<void> = new Subject<void>();
     public items: any[];
@@ -40,7 +40,7 @@ export class FormlyAddressPickerComponent extends Field implements OnInit, OnDes
     private lat: number;
     private lng: number;
 
-    constructor(private http: Http, public dialog: MdDialog) {
+    constructor(private http: Http, public dialog: MatDialog) {
         super();
     }
 

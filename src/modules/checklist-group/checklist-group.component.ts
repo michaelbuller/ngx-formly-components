@@ -1,8 +1,8 @@
 import { Component, OnInit, DoCheck, OnDestroy, ViewEncapsulation } from '@angular/core';
-import { Field } from 'ng-formly';
+import { FieldType } from '@ngx-formly/core';
 import { Validators, FormControl } from '@angular/forms';
 import { Subject } from 'rxjs/Subject';
-import { MdCheckboxChange } from "@angular/material";
+import { MatCheckboxChange } from "@angular/material";
 
 @Component({
     selector: 'ngx-formly-component-checklist-group',
@@ -25,7 +25,7 @@ import { MdCheckboxChange } from "@angular/material";
     `,
     encapsulation: ViewEncapsulation.Emulated
 })
-export class FormlyChecklistGroupComponent extends Field implements OnInit, OnDestroy {
+export class FormlyChecklistGroupComponent extends FieldType implements OnInit, OnDestroy {
 
     private ngUnsubscribe: Subject<void> = new Subject<void>();
 
@@ -91,7 +91,7 @@ export class FormlyChecklistGroupComponent extends Field implements OnInit, OnDe
         return top.concat(bottom);
     }
 
-    toggle(e: MdCheckboxChange, item: any) {
+    toggle(e: MatCheckboxChange, item: any) {
         if (e.checked) {
             this.checked[item.value] = true;
             this.selectedItems.push(item);

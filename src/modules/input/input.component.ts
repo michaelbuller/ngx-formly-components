@@ -1,5 +1,5 @@
 import { Component, OnInit, DoCheck, ChangeDetectorRef, OnDestroy, AfterViewInit, ViewChild, Input, ElementRef } from '@angular/core';
-import { Field } from 'ng-formly';
+import { FieldType } from '@ngx-formly/core';
 import { Subject } from 'rxjs/Subject';
 import { FormControl } from '@angular/forms';
 
@@ -22,7 +22,7 @@ import { FormControl } from '@angular/forms';
   </div>
   `,
 })
-export class FormlyInputComponent extends Field implements OnInit, OnDestroy, DoCheck {
+export class FormlyInputComponent extends FieldType implements OnInit, OnDestroy, DoCheck {
 
     private ngUnsubscribe: Subject<void> = new Subject<void>();
     public items: any[];

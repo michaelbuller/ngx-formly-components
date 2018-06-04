@@ -1,10 +1,10 @@
 import { Component, OnInit, DoCheck, ChangeDetectorRef, OnDestroy, Inject, AfterViewInit } from '@angular/core';
-import { Field } from 'ng-formly';
+import { FieldType } from '@ngx-formly/core';
 import { Subject } from 'rxjs/Subject';
 import { FormControl } from '@angular/forms';
 import { Http } from "@angular/http";
 import { Subscription } from 'rxjs/Subscription';
-import { MD_DIALOG_DATA } from "@angular/material";
+import { MAT_DIALOG_DATA } from "@angular/material";
 //import * as L from 'leaflet';
 declare var L;
 @Component({
@@ -44,7 +44,7 @@ export class FormlyAddressPickerMapComponent implements OnInit, AfterViewInit, O
 	private location = null;
 	public mapId = Math.round(Math.random() * 10000000);
 
-	constructor(private http: Http, @Inject(MD_DIALOG_DATA) public data: any) {
+	constructor(private http: Http, @Inject(MAT_DIALOG_DATA) public data: any) {
 	}
 
 	public ngOnInit() {

@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { FormlyCardWrapperComponent } from './card-wrapper.component';
-import { MdCardModule } from '@angular/material';
+import { MatCardModule } from '@angular/material';
 
 @NgModule({
 	imports: [
 		CommonModule,
-		MdCardModule
+		MatCardModule
 	],
 	declarations: [FormlyCardWrapperComponent],
 	exports: [FormlyCardWrapperComponent]

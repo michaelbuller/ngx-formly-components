@@ -1,5 +1,5 @@
 import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
-import { Field } from 'ng-formly';
+import { FieldType } from '@ngx-formly/core';
 import { Validators, FormControl } from '@angular/forms';
 import { Subject } from 'rxjs/Subject';
 import * as moment from 'moment';
@@ -23,7 +23,7 @@ import * as moment from 'moment';
     </div>
     `
 })
-export class FormlyDatetimeComponent extends Field implements OnInit, OnDestroy {
+export class FormlyDatetimeComponent extends FieldType implements OnInit, OnDestroy {
 
     private ngUnsubscribe: Subject<void> = new Subject<void>();
 

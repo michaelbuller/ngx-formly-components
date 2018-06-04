@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FormlyAddressPickerComponent } from './address-picker.component';
-import { MdInputModule, MdAutocompleteModule, MdTooltipModule, MdDialogModule, MdButtonModule } from '@angular/material';
+import { MatInputModule, MatAutocompleteModule, MatTooltipModule, MatDialogModule, MatButtonModule } from '@angular/material';
 import { Http, HttpModule } from '@angular/http';
 import { FormlyAddressPickerMapComponent } from './map/map.component';
 
@@ -12,11 +12,11 @@ import { FormlyAddressPickerMapComponent } from './map/map.component';
 		FormsModule,
 		ReactiveFormsModule,
 		HttpModule,
-		MdInputModule,
-		MdAutocompleteModule,
-		MdTooltipModule,
-		MdDialogModule,
-		MdButtonModule
+		MatInputModule,
+		MatAutocompleteModule,
+		MatTooltipModule,
+		MatDialogModule,
+		MatButtonModule
 	],
 	declarations: [FormlyAddressPickerComponent, FormlyAddressPickerMapComponent],
 	exports: [FormlyAddressPickerComponent],

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { MdInputModule, MdAutocompleteModule, MdTooltipModule, MdRadioModule } from '@angular/material';
+import { MatInputModule, MatAutocompleteModule, MatTooltipModule, MatRadioModule } from '@angular/material';
 import { Http, HttpModule } from '@angular/http';
 import { FormlyRadioGroupComponent } from './radio-group.component';
 
@@ -10,7 +10,7 @@ import { FormlyRadioGroupComponent } from './radio-group.component';
 		CommonModule,
 		FormsModule,
 		ReactiveFormsModule,
-		MdRadioModule,
+		MatRadioModule,
 	],
 	declarations: [FormlyRadioGroupComponent],
 	exports: [FormlyRadioGroupComponent],

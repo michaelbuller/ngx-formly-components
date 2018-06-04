@@ -3,14 +3,14 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TextMaskModule } from 'angular2-text-mask';
 import { FormlyChecklistGroupComponent } from './checklist-group.component';
-import { MdCheckboxModule } from '@angular/material';
+import { MatCheckboxModule } from '@angular/material';
 
 @NgModule({
 	imports: [
 		CommonModule,
 		FormsModule,
 		ReactiveFormsModule,
-		MdCheckboxModule
+		MatCheckboxModule
 	],
 	declarations: [FormlyChecklistGroupComponent],
 	exports: [FormlyChecklistGroupComponent]

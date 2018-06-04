@@ -1,5 +1,5 @@
 import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
-import { Field } from 'ng-formly';
+import { FieldType } from '@ngx-formly/core';
 import { Validators, FormControl } from '@angular/forms';
 import { Subject } from 'rxjs/Subject';
 
@@ -14,7 +14,7 @@ import { Subject } from 'rxjs/Subject';
     <md-checkbox [disabled]="formControl.disabled" [(ngModel)]="value" (ngModelChange)="changed($event)">{{to.text || ''}}</md-checkbox>
     `
 })
-export class FormlyChecklistComponent extends Field implements OnInit, OnDestroy {
+export class FormlyChecklistComponent extends FieldType implements OnInit, OnDestroy {
 
     private ngUnsubscribe: Subject<void> = new Subject<void>();
     public value: boolean;

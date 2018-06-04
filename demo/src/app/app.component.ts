@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Validators, FormGroup } from '@angular/forms';
-import { FormlyFieldConfig } from 'ng-formly';
+import { FormlyFieldConfig } from '@ngx-formly/core';
 import { Observable, BehaviorSubject } from 'rxjs';
 import * as moment from 'moment';
 import { Subject } from 'rxjs/Subject';
@@ -165,7 +165,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
           className: 'col-sm-3',
           key: 'type',
           type: 'x-select',
-          wrapper: [],
+          wrappers: [],
           templateOptions: {
             placeholder: 'Type',
             source: this.typesCollection,
@@ -191,7 +191,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
           className: 'col-sm-3',
           key: 'subtype',
           type: 'x-select-autocomplete',
-          wrapper: [],
+          wrappers: [],
           templateOptions: {
             placeholder: 'Subtype',
             source: this.subtypesCollection_filtered,
@@ -205,7 +205,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
           className: 'col-sm-3',
           key: 'priority',
           type: 'x-select',
-          wrapper: [],
+          wrappers: [],
           templateOptions: {
             placeholder: 'Priority',
             source: this.prioritiesCollection,
@@ -242,7 +242,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
           className: 'col-sm-3',
           key: 'input1',
           type: 'x-input',
-          wrapper: [],
+          wrappers: [],
           templateOptions: {
             placeholder: 'Input',
             disabled: false,
@@ -258,7 +258,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
           className: 'col-sm-3',
           key: 'autocomplete',
           type: 'x-autocomplete',
-          wrapper: [],
+          wrappers: [],
           templateOptions: {
             placeholder: 'Autocomplete',
             tooltip: 'right',
@@ -286,7 +286,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
           className: 'col-sm-4',
           key: 'input2',
           type: 'x-input',
-          wrapper: [],
+          wrappers: [],
           templateOptions: {
             label: 'Input',
             placeholder: 'E-mail',
@@ -302,7 +302,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
           className: 'col-sm-4',
           key: 'textarea',
           type: 'x-textarea',
-          wrapper: [],
+          wrappers: [],
           templateOptions: {
             label: 'Input',
             placeholder: 'Comments',
@@ -317,7 +317,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
           className: 'col-sm-2',
           key: 'checklist1',
           type: 'x-checklist',
-          wrapper: [],
+          wrappers: [],
           templateOptions: {
             text: 'Short text',
             defaultValue: true
@@ -327,7 +327,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
           className: 'col-sm-2',
           key: 'checklist2',
           type: 'x-checklist',
-          wrapper: [],
+          wrappers: [],
           templateOptions: {
             text: 'Some checklist with lots of text',
           }
@@ -340,7 +340,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
           className: 'col-sm-4',
           key: 'address',
           type: 'x-address-picker',
-          wrapper: [],
+          wrappers: [],
           templateOptions: {
             placeholder: 'Address',
             tooltip: 'Open map',
@@ -374,7 +374,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
           className: 'col-sm-2',
           key: 'radioGroup',
           type: 'x-radio-group',
-          wrapper: [],
+          wrappers: [],
           templateOptions: {
             label: 'Animals',
             source: this.animalsCollection,
@@ -387,7 +387,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
           className: 'col-sm-3',
           key: 'selectAutocomplete',
           type: 'x-select-autocomplete',
-          wrapper: [],
+          wrappers: [],
           templateOptions: {
             placeholder: 'Select-Autocomplete',
             tooltip: 'right',
@@ -398,7 +398,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
           className: 'col-sm-3',
           key: 'checklistGroup',
           type: 'x-checklist-group',
-          wrapper: [],
+          wrappers: [],
           templateOptions: {
             label: 'Animals',
             source: this.animalsCollection,
@@ -447,7 +447,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
             className: 'col-sm-3',
             key: 'checklist',
             type: 'x-checklist',
-            wrapper: [],
+            wrappers: [],
             templateOptions: {
               text: "I'm inside a repeated section!",
             }
@@ -456,7 +456,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
             className: 'col-sm-3',
             key: 'name',
             type: 'x-input',
-            wrapper: [],
+            wrappers: [],
             templateOptions: {
               placeholder: 'Name',
               disabled: false,

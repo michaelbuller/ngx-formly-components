@@ -2,18 +2,19 @@ import { CommonModule } from '@angular/common';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { FormlyRepeatedSectionComponent } from './repeated-section.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormlyBootstrapModule, FormlyModule } from 'ng-formly';
-import { MdButtonModule, MdTooltipModule } from '@angular/material';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyMaterialModule } from '@ngx-formly/material'; 
+import { MatButtonModule, MatTooltipModule } from '@angular/material';
 
 @NgModule({
 	imports: [
 		CommonModule,
 		FormsModule,
 		ReactiveFormsModule,
-		FormlyBootstrapModule,
+		FormlyMaterialModule,
 		FormlyModule,
-		MdButtonModule,
-		MdTooltipModule
+		MatButtonModule,
+		MatTooltipModule
 	],
 	declarations: [FormlyRepeatedSectionComponent],
 	exports: [

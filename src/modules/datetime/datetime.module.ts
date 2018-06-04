@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { MdInputModule, MdDatepickerModule, MdButtonModule, MdNativeDateModule, MdTooltipModule } from '@angular/material';
+import { MatInputModule, MatDatepickerModule, MatButtonModule, MatNativeDateModule, MatTooltipModule } from '@angular/material';
 import { TextMaskModule } from 'angular2-text-mask';
 import { FormlyDatetimeComponent } from './datetime.component';
 
@@ -10,11 +10,11 @@ import { FormlyDatetimeComponent } from './datetime.component';
 		CommonModule,
 		FormsModule,
 		ReactiveFormsModule,
-		MdInputModule,
-		MdDatepickerModule,
-		MdNativeDateModule,
+		MatInputModule,
+		MatDatepickerModule,
+		MatNativeDateModule,
 		TextMaskModule,
-		MdTooltipModule
+		MatTooltipModule
 	],
 	declarations: [FormlyDatetimeComponent],
 	exports: [FormlyDatetimeComponent]

@@ -1,10 +1,10 @@
 import { Component, OnInit, DoCheck, ChangeDetectorRef, OnDestroy, ViewChild } from '@angular/core';
-import { Field } from 'ng-formly';
+import { FieldType } from '@ngx-formly/core';
 import { Subject } from 'rxjs/Subject';
 import { FormControl } from '@angular/forms';
 import { Http } from "@angular/http";
 import { Subscription } from 'rxjs/Subscription';
-import { MdDialog, MdAutocomplete } from '@angular/material';
+import { MatDialog, MatAutocomplete } from '@angular/material';
 
 @Component({
     selector: 'formly-ngx-radio-group',
@@ -32,14 +32,14 @@ import { MdDialog, MdAutocomplete } from '@angular/material';
     </md-radio-group>
   `,
 })
-export class FormlyRadioGroupComponent extends Field implements OnInit, OnDestroy {
+export class FormlyRadioGroupComponent extends FieldType implements OnInit, OnDestroy {
 
     private ngUnsubscribe: Subject<void> = new Subject<void>();
 
     public items: any[] = [];
     public value: any = null;
 
-    constructor(private http: Http, public dialog: MdDialog) {
+    constructor(private http: Http, public dialog: MatDialog) {
         super();
     }
 

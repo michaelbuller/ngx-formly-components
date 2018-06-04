@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Field } from 'ng-formly';
+import { FieldType } from '@ngx-formly/core';
 
 @Component({
     selector: 'formly-blank',
@@ -12,7 +12,7 @@ import { Field } from 'ng-formly';
     <div class="blank"></div>
     `
 })
-export class FormlyBlankComponent extends Field {
+export class FormlyBlankComponent extends FieldType {
 
     constructor() {
         super();

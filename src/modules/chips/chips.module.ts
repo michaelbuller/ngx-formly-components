@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { MdAutocompleteModule, MdInputModule, MdChipsModule, MdButtonModule } from '@angular/material';
+import { MatAutocompleteModule, MatInputModule, MatChipsModule, MatButtonModule } from '@angular/material';
 import { TextMaskModule } from 'angular2-text-mask';
 import { FormlyChipsComponent } from './chips.component';
 
@@ -10,10 +10,10 @@ import { FormlyChipsComponent } from './chips.component';
 		CommonModule,
 		FormsModule,
 		ReactiveFormsModule,
-		MdInputModule,
-    MdAutocompleteModule,
-    MdChipsModule,
-    MdButtonModule
+		MatInputModule,
+    MatAutocompleteModule,
+    MatChipsModule,
+    MatButtonModule
 	],
 	declarations: [FormlyChipsComponent],
 	exports: [FormlyChipsComponent]

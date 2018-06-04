@@ -1,5 +1,5 @@
 import { Component, OnInit, DoCheck, ChangeDetectorRef, OnDestroy } from '@angular/core';
-import { Field } from 'ng-formly';
+import { FieldType } from '@ngx-formly/core';
 import { Subject } from 'rxjs/Subject';
 
 @Component({
@@ -17,7 +17,7 @@ import { Subject } from 'rxjs/Subject';
     </div>
   `,
 })
-export class FormlyTextareaComponent extends Field implements OnInit, OnDestroy {
+export class FormlyTextareaComponent extends FieldType implements OnInit, OnDestroy {
 
     private ngUnsubscribe: Subject<void> = new Subject<void>();
     public value: string;

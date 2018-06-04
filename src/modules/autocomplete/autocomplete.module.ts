@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { MdInputModule, MdAutocompleteModule, MdTooltipModule } from '@angular/material';
+import { MatInputModule, MatAutocompleteModule, MatTooltipModule } from '@angular/material';
 import { Http, HttpModule } from '@angular/http';
 import { FormlyAutocompleteComponent } from './autocomplete.component';
 
@@ -10,9 +10,9 @@ import { FormlyAutocompleteComponent } from './autocomplete.component';
 		CommonModule,
 		FormsModule,
 		ReactiveFormsModule,
-		MdInputModule,
-		MdAutocompleteModule,
-		MdTooltipModule
+		MatInputModule,
+		MatAutocompleteModule,
+		MatTooltipModule
 	],
 	declarations: [FormlyAutocompleteComponent],
 	exports: [FormlyAutocompleteComponent],

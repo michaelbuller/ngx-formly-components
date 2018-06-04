@@ -1,10 +1,10 @@
 import { Component, OnInit, DoCheck, ChangeDetectorRef, OnDestroy, ViewChild } from '@angular/core';
-import { Field } from 'ng-formly';
+import { FieldType } from '@ngx-formly/core';
 import { Subject } from 'rxjs/Subject';
 import { FormControl } from '@angular/forms';
 import { Http } from "@angular/http";
 import { Subscription } from 'rxjs/Subscription';
-import { MdDialog, MdAutocomplete } from '@angular/material';
+import { MatDialog, MatAutocomplete } from '@angular/material';
 
 @Component({
     selector: 'formly-ngx-autocomplete',
@@ -21,7 +21,7 @@ import { MdDialog, MdAutocomplete } from '@angular/material';
     </div>
   `,
 })
-export class FormlyAutocompleteComponent extends Field implements OnInit, OnDestroy {
+export class FormlyAutocompleteComponent extends FieldType implements OnInit, OnDestroy {
 
     private ngUnsubscribe: Subject<void> = new Subject<void>();
 
@@ -31,7 +31,7 @@ export class FormlyAutocompleteComponent extends Field implements OnInit, OnDest
     private sub: Subscription;
     private timeout: any;
 
-    constructor(private http: Http, public dialog: MdDialog, private changeDetectorRef: ChangeDetectorRef) {
+    constructor(private http: Http, public dialog: MatDialog, private changeDetectorRef: ChangeDetectorRef) {
         super();
     }
 

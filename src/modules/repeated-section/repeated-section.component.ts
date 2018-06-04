@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormGroup } from '@angular/forms';
-import { FieldType } from 'ng-formly';
+import { FieldType } from '@ngx-formly/core';
 declare var require: any;
 var clone: any = require('lodash.clonedeep');
 

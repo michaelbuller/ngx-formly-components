@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { MdSelectModule, MdButtonModule } from '@angular/material';
+import { MatSelectModule, MatButtonModule } from '@angular/material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TextMaskModule } from 'angular2-text-mask';
 import { FormlySelectComponent } from './select.component';
@@ -10,8 +10,8 @@ import { FormlySelectComponent } from './select.component';
 		CommonModule,
 		FormsModule,
 		ReactiveFormsModule,
-		MdSelectModule,
-		MdButtonModule
+		MatSelectModule,
+		MatButtonModule
 	],
 	declarations: [FormlySelectComponent],
 	exports: [FormlySelectComponent]

@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { FormlyChipsModule } from './modules/chips/chips.module';
-import { FormlyModule, FormlyBootstrapModule } from 'ng-formly';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyMaterialModule } from '@ngx-formly/material';
 import { FormlyChipsComponent } from './modules/chips/chips.component';
 import { FormlySelectModule } from './modules/select/select.module';
 import { FormlySelectComponent } from './modules/select/select.component';
@@ -43,7 +44,7 @@ import { FormlyChecklistGroupModule } from './modules/checklist-group/checklist-
 		CommonModule,
 		FormsModule,
 		ReactiveFormsModule,
-		FormlyBootstrapModule,
+		FormlyMaterialModule,
 		FormlyModule.forRoot({
 			types: [
 				{ name: 'x-chips', component: FormlyChipsComponent },
@@ -87,7 +88,7 @@ import { FormlyChecklistGroupModule } from './modules/checklist-group/checklist-
 	],
 	exports: [
 		ReactiveFormsModule,
-		FormlyBootstrapModule,
+		FormlyMaterialModule,
 		FormlyModule		
 	]
 })
