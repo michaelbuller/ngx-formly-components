@@ -6,6 +6,7 @@ import { Http } from "@angular/http";
 import { Subscription } from 'rxjs/Subscription';
 import { MatDialog, MatAutocomplete } from '@angular/material';
 import { FormlyAddressPickerMapComponent } from './map/map.component';
+import { Observable } from 'rxjs/Rx';
 
 @Component({
     selector: 'ngx-formly-component-address-picker',
